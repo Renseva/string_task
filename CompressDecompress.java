@@ -3,6 +3,10 @@ public class CompressDecompress {
 
     // static method to compress string
     public static String compressString(String inputString) {
+        // returns a warning about empty string
+        if (inputString.isEmpty()) {
+            System.out.println("Empty string was entered.");
+        }
         // create StringBuilder object to generate output string
         StringBuilder compressedString = new StringBuilder();
         // initialize character count variable
@@ -29,6 +33,10 @@ public class CompressDecompress {
 
     // static method to decompress string using recursive method
     public static String decompressString(String inputString) {
+        // returns a warning about empty string
+        if (inputString.isEmpty()) {
+            System.out.println("Empty string was entered.");
+        }
         return decompressRecursive(inputString, 0, new StringBuilder());
     }
 
@@ -63,7 +71,8 @@ public class CompressDecompress {
 
     public static void main(String[] args) {
         System.out.println(compressString("aaaaaaaaaaaaaaaaaaaaababccc"));
+        System.out.println(compressString(""));
         System.out.println(decompressString("a1b11c1"));
-
+        System.out.println(decompressString(""));
     }
 }
