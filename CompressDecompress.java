@@ -1,12 +1,16 @@
 // class including both methods
 public class CompressDecompress {
 
-    // static method to compress string
-    public static String compressString(String inputString) {
-        // returns a warning about empty string
-        if (inputString.isEmpty()) {
+    // method to return a warning about empty string
+    private static void ifEmpty(String input) {
+        if (input.isEmpty()) {
             System.out.println("Empty string was entered.");
         }
+    }
+
+    // static method to compress string
+    public static String compressString(String inputString) {
+        ifEmpty(inputString);
         // create StringBuilder object to generate output string
         StringBuilder compressedString = new StringBuilder();
         // initialize character count variable
@@ -33,10 +37,7 @@ public class CompressDecompress {
 
     // static method to decompress string using recursive method
     public static String decompressString(String inputString) {
-        // returns a warning about empty string
-        if (inputString.isEmpty()) {
-            System.out.println("Empty string was entered.");
-        }
+        ifEmpty(inputString);
         return decompressRecursive(inputString, 0, new StringBuilder());
     }
 
